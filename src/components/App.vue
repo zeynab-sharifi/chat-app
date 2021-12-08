@@ -1,20 +1,15 @@
 <template>
-    <div class="chat-app">
-      <!-- <thread-section></thread-section>
-      <massage-section></massage-section> -->
+    <div class="chatapp">
+        <!-- <thread-section></thread-section>
+        <message-section></message-section> -->
     </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  cteated(){
-    // this.$store.dispatch('getAllMessage');
-  },
-  data () {
-    return {
-      
+    name: 'App',
+    created() {
+        this.$store.dispatch('getAllMessages');
     }
-  }
 }
 </script>

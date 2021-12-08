@@ -1,23 +1,26 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import *as getters from './getters';
-import *as actions from './actions';
-import *as mutations from './mutations'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import * as getters from './getters';
+import * as actions from './actions';
+import mutations from './mutations';
+
 Vue.use(Vuex);
 
 const state = {
     currentThreadID: null,
-    thread: {
-    /*id :{
-        id,
-        name,
-        message:[...ids],
-        lastMessage
-    },*/
-},
+    threads: {
+        /*
+        id : {
+            id,
+            name,
+            messages: [...ids],
+            lastMessage
+        }
+        */
+    },
     messages: {
-        /* 
-        id:{
+        /*
+        id: {
             id,
             threadId,
             threadName,
@@ -30,9 +33,10 @@ const state = {
     }
 }
 
+
 export default new Vuex.Store({
     state,
     getters,
     actions,
     mutations
-})
+});
