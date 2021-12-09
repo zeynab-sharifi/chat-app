@@ -12,3 +12,8 @@ export const getAllMessages = ({ commit }) => {
 export const swtichThread = ({ commit } , payload) =>{
     commit(types.SWITCH_THREAD , payload);
 }
+export const sendMessage = ({ commit } , payload) => {
+    api.createMessage(payload , message => {
+        commit(types.RECEIVE_MESSAGE , { message })
+    })
+} 

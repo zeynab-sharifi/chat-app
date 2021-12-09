@@ -17,10 +17,14 @@ export default {
         })
         setCurrentThread(state,latestMessage.threadID);
     },
-    [types.SWITCH_THREAD] (state , {id}){
+
+    [types.RECEIVE_MESSAGE] (state, { message }) {
+        addMessage(state , message);
+    },
+
+    [types.SWITCH_THREAD] (state, { id }) {
         setCurrentThread(state , id)
     }
-
 }
 
 
