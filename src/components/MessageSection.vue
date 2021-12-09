@@ -2,7 +2,12 @@
     <div class="message-section">
         <h3 class="message-thread-heading">{{ thread.name }}</h3>
         <ul class="message-list" ref="list">
-            
+            <message
+                v-for="message in sortedMessages"
+                :key="message.id"
+                :message="message"
+            >
+            </message>
         </ul>
         <textarea class="message-composer" @keyup.enter="sendMessage"></textarea>
     </div>
@@ -10,11 +15,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
-
+import Message from './Message';
 
 export default {
     name : 'MessageSection',
-    
+    components : { Message },
     computed :{
         ...mapGetters({
             thread : 'currentThread',
