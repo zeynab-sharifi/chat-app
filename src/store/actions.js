@@ -7,4 +7,8 @@ export const getAllMessages = ({ commit }) => {
             messages
         });
     })
+    
+}
+export const swtichThread = ({ commit } , payload) =>{
+    commit(types.SWITCH_THREAD , payload);
 }

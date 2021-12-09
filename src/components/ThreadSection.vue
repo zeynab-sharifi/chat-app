@@ -16,10 +16,12 @@
     </div>
 </template>
 <script>
+import Thread from './Thread'
 import { mapGetters } from 'vuex';
 
     export default{
-        name : 'ThreadSection',   
+        name : 'ThreadSection', 
+        components:{Thread},  
         computed : {
             ...mapGetters([
                 'threads',
